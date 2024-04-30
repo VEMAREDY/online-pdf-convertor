@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image to pdf</title>
+
+  <!-----pdf-lib link-->
+  <script src="https://unpkg.com/pdf-lib"></script>
+
+  <!----js downlod link-->
+  <script type="text/javascript" src="https://unpkg.com/downloadjs@1.4.7/download.js"></script>
+
+  <!-----font awsome cdn link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a8da572cb9.js" crossorigin="anonymous"></script>
+
+  <!------css link-->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!----nav bar-->
+  <div class="nav">
+    <span class="logo">
+      <i class="fa fa-file-pdf-o"> PDF</i>
+    </span>
+    <div>
+      <button id="convertBtn"onclick={embedImages()}>SAVE AS PDF</button>
+      <button id="upload-msg">IMAGE FILES</button>
+    </div>
+  </div>
+
+  <!-----input page-->
+  <h3>Online Image To Pdf</h3>
+  <div class="input-page" id="input-page">
+    <div class="choose-file">
+      <div class="add-more-files">
+        <div class="inp-container">
+          <input type="file" id="upload-file"onchange={encodeImageFileAsURL(this)}multiple accept="image/">
+          <h4 class="drop">DRAG & DROP OR</h4>
+          <p>
+            <i class="fa fa-file-image-o fa-4x img-icon"></i>
+          </p>
+          <label for="upload-file"id="custom-file">CHOOSE FILES</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!----pdf page-->
+  <div class="pdf-page" id="pdf-page">
+    <div class="create-pdf" id="create-pdf">
+      <!--- this part of code is just to show the pdf page structure and will be removed once js file will be created-->
+      <div class="file-item">
+        <div class="modify">
+          <button class="delete-btn"><i class="fa fa-trash"></i></button>
+        </div>
+        <div class="img-container">
+          <img src="/lion.jpg " alt="img" id="img">
+        </div>
+        <p id="img-name">img-name</p>
+      </div>
+      <div class="add-more-file">
+        <div class="inp-cont">
+          <input type="file" id="inp" multiple accept="image/">
+          <p><i class="fa fa-plus"></i></p>
+          <label for="inp">ADD FILES</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!----- javascript file-->
+  <script src="script.js"></script>
+  <!----course--->
+  <section class="steps">
+    <h1>Steps to create the pdf </h1>
+    <p>Easy to create just follow these 3 steps.</p>
+    <div class="row">
+      <div class="steps-col">
+        <h3>Select the "DRAG & DROP OR"</h3>
+        <p>In this choose the Image file that you want .</p>
+      </div>
+      <div class="steps-col">
+        <h3>Go to the files and choose</h3>
+        <P>The images that you want to make as pdf formate,"Alert:give only JPEG formate pictures",by clicking one by one.</P>
+      </div>
+      <div class="steps-col">
+        <h3>Click on create pdf</h3>
+        <p>By clicking the button the pdf will be created and it gonna be all yours,enjoy the pdf.</p>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <h4>About Us</h4>
+    <p>we here to make the things better to your life,You people mean lot to us.</p>
+    <div calass="icons">
+      <i class="fa fa-facebook"></i>
+      <i class="fa fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa fa-linkedin"></i>
+      <i class="fa-brands fa-github"></i>
+    </div>
+    <div class="contact-col">
+      <h3>contact us</h3>
+      <form action="form-handler.php"method="post">
+        <input type="text"name="name" placeholder="Enter Your Name"requied>
+        <input type="email"name="email" placeholder="Enter Your Email Address"requied>
+        <input type="text"name="subject" placeholder="Enter Your Subject"requied>
+        <textarea rows="5"name="message" placeholder="message"required></textarea>
+        <button type="submit"class="hero-btn red-btn">Send message</button>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="terms of use.html">TERMS OF USE</a></li>
+          <li><a href="privacy.html">PRIVACY NOTICE</a></li>
+          <li><a href="imprint.html">IMPRINT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
